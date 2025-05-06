@@ -1,11 +1,10 @@
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AliExpressXPathDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.aliexpress.com");
@@ -20,11 +19,7 @@ public class AliExpressXPathDemo {
         searchBar.sendKeys("smart watch");
         searchButton.click();
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(5000);
 
         driver.quit();
     }
